@@ -2,7 +2,7 @@ package com.glennboudaer.dto;
 
 import com.glennboudaer.enums.Brevet;
 
-public abstract class AbstractDiver 
+public abstract class AbstractDiver
 {
 	protected String name;
 	protected int numberOfStars;
@@ -49,4 +49,15 @@ public abstract class AbstractDiver
 	public void setProof(boolean proof) {
 		this.proof = proof;
 	}
+	
+    public String getType() 
+    {
+        return String.format("%d*%s", getNumberOfStars(), getBrevet());
+    }
+    
+    @Override
+    public String toString()
+    {
+    	return String.format("%s %d* %s - %d dives", getName(), getNumberOfStars(), getBrevet(), getNumberOfDives());
+    }
 }
